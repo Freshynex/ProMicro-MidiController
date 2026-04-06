@@ -19,3 +19,5 @@ AR-PROMICRO-TYPE-C (ATmega32U4)
 2 Sliding pots
 2 buttons for octave switching
 
+## Software used for testing
+FL Studio 20
