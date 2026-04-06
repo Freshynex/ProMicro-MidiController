@@ -8,9 +8,7 @@ Standard breadboard 56x165mm 200/630pin
 
 ### MCU
 AR-PROMICRO-TYPE-C (ATmega32U4)
-[promicro]:(https://github.com/Freshynex/ProMicro-MidiController/blob/main/promicropinout.png) "Pro micro pinout"
-!Hello[promicro]
-
+<img alt="promicropinout.png" data-hpc="true" src="https://github.com/Freshynex/ProMicro-MidiController/blob/main/promicropinout.png?raw=true" style="max-width: 100%;">
 
 ### Keyboard
 24 button keyboard by [bryckergithublink]
