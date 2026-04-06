@@ -8,6 +8,7 @@ Standard breadboard 56x165mm 200/630pin
 
 ### MCU
 AR-PROMICRO-TYPE-C (ATmega32U4)
+
 <img alt="promicropinout.png" data-hpc="true" src="https://github.com/Freshynex/ProMicro-MidiController/blob/main/promicropinout.png?raw=true" style="max-width: 100%;">
 
 ### Keyboard
