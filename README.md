@@ -22,6 +22,8 @@ visszaad egy értéket.
 
 ## 2. Kapcsolás rajz
 
+<img alt="promicropinout.png" data-hpc="true" src="https://github.com/Freshynex/ProMicro-MidiController/blob/main/promicropinout.png?raw=true" style="max-width: 100%;">
+
 ## Components
 
 ### Base
