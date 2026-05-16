@@ -44,7 +44,7 @@ A MIDI protokollban 8 bites adatcsomagokkal dolgozunk. Két féle üzenet van: s
 Egy üzenet mindig status byte-tal kezdődik, amit a parancs függvényében 0, 1 vagy 2 data byte követ.
 A status byte felső 4 bitje jelöli a kiadott parancsot (aminek az első bitje mindig 1, így az első kódszó decimálisan a 8), a második fele a csatornát jelöli (16 csatornát lehet kezelni, ebben a projektben egynél többre nincs szükségünk).
 Számunkra fontosabb status üzenetek:
-<ul>
+<ul style="list-style:none;">
  <li>
   NoteOn "hang lejátszás"
   Üzenet felépítése: 
