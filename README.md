@@ -39,14 +39,24 @@ PISO shift register: 74HC166 (3 db)
 
 ## 3. Funkcionalitás
 
-A MIDI protokollban 8 bites adatcsomagokkal dolgozunk. Két féle üzenet van: command és data. Az első bit azt jelöli, hogy a kettő közül melyiket küldjük, így adat üzenet esetén 0-127, command üzenet esetén 128-255 a használható értéktartomány. Ezek együttesen alkotnak egy midi üzenetet (message).
-Egy üzenet mindig command byte-tal kezdődik, amit a parancs függvényében 0, 1 vagy 2 data byte követ.
-Mi esetünkben a fontosabb üzenetek:
+A MIDI protokollban 8 bites adatcsomagokkal dolgozunk. Két féle üzenet van: status és data. Az első bit azt jelöli, hogy a kettő közül melyiket küldjük, így adat üzenet esetén 0-127, command üzenet esetén 128-255 a használható értéktartomány. Ezek együttesen alkotnak egy midi üzenetet (message).
+Egy üzenet mindig status byte-tal kezdődik, amit a parancs függvényében 0, 1 vagy 2 data byte követ.
+A status byte felső 4 bitje jelöli a kiadott parancsot (aminek az első bitje mindig 1, így az első kódszó decimálisan a 8), a második fele a csatornát jelöli (16 csatornát lehet kezelni, ebben a projektben egynél többre nincs szükségünk).
+Számunkra fontosabb status üzenetek:
 <li>
  <ul>
-  NoteOn, NoteOff: 
+  NoteOn "hang lejátszás"
+  Üzenet felépítése: 1 status byte (parancs: 0x90), 2 adat byte (pitch - melyik hang, velocity - "lenyomás ereje")
+ </ul>
+ <ul>
+  NoteOff "hang leállítás"
+  Üzenet felépítése: 1 status byte (parancs: 0x80), 2 adat byte (pitch, velocity)
+ </ul>
+ <ul>
+  Control Change "paraméter állítás"
+  Üzenet felépítése: 1 status byte (parancs: 0xB0), 1 vagy 2 adat byte (MSB, LSB) attól függően, hogy 7 vagy 14 bit precizitással szeretnénk küldeni az értéket
  </ul>
 </li>
 
-## Software used for testing
+## Szoftver a teszteléshez
 FL Studio 20
