@@ -20,7 +20,7 @@ visszaad egy értéket.
 
  - Billentyűzet modul (továbbiakban <b>KB</b>), amely egy 2 oktávos zongora interfészt ad a felhasználónak. 
 
-##2. Kapcsolás rajz
+## 2. Kapcsolás rajz
 
 ## Components
 
