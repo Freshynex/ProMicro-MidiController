@@ -5,7 +5,7 @@
 Ez a projekt a zenekészítés/zeneszerzés folyamatát segíti a MIDI protokoll felhasználásával.
 Ennek a készüléknek a felépítése különböző feladatott ellátó alrészekből áll.
 
-###1.2 Vezérlő és modulok
+### 1.2 Vezérlő és modulok
 A legfőbb része egy Atmel ATMEGA32u4 ic-vel ellátott Arduino Pro Micro fejlesztői alaplap (továbbiakban MCU).
 Az MCU-t egy kifejtő-kártyára helyezve a többi alrész (továbbiakban modul) ráköthető.
 A következő modulok lesznek alapból integrálva a készülékben:
