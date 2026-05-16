@@ -26,11 +26,17 @@ visszaad egy értéket.
 ## 2. Alkatrészek
 
 MCU: Arduino Pro Micro Atmel ATMEGA32u4
+
 DISP: 128x64 i2c oled display (SSD1306 driver)
+
 Oktáv váltó gombok: TACTS-6x6x7.3 (2 db)
+
 KB gombok: AKKO Stellar Rose Switch – Lubed-5pin (24 db)
+
 Tengelyes potméter: POM1615 LIN 1K B (2 db)
+
 Toló potméter: PTA2043-2015CIB203 (2 db)
+
 PISO shift register: 74HC166 (3 db)
 
 ### 2.1 Kapcsolás rajz
@@ -43,26 +49,17 @@ A MIDI protokollban 8 bites adatcsomagokkal dolgozunk. Két féle üzenet van: s
 
 Egy üzenet mindig status byte-tal kezdődik, amit a parancs függvényében 0, 1 vagy 2 data byte követ.
 A status byte felső 4 bitje jelöli a kiadott parancsot (aminek az első bitje mindig 1, így az első kódszó decimálisan a 8), a második fele a csatornát jelöli (16 csatornát lehet kezelni, ebben a projektben egynél többre nincs szükségünk).
+
 Számunkra fontosabb status üzenetek:
-<ul style="list-style:none;">
- <li>
-  NoteOn "hang lejátszás"
-  Üzenet felépítése: 
-  <ul style="list-style:none;">
-   <li>  
-    1 status byte (parancs: 0x90)<br> 2 adat byte (pitch - melyik hang, velocity - "lenyomás ereje")
-    </li>
-  </ul>
- </li>
- <li>
-  NoteOff "hang leállítás"
-  Üzenet felépítése: 1 status byte (parancs: 0x80), 2 adat byte (pitch, velocity)
- </li>
- <li>
-  Control Change "paraméter állítás"
-  Üzenet felépítése: 1 status byte (parancs: 0xB0), 1 vagy 2 adat byte (MSB, LSB) attól függően, hogy 7 vagy 14 bit precizitással szeretnénk küldeni az értéket
- </li>
-</ul>
+
+| Status üzenet  | Üzenet kódja | Adat byte 1 | Adat byte 2 | Adat byte 3 |
+| -------------  | ------------ | ----------- | ----------- | ----------- |
+| NoteOn         | 0x90         | Pitch       | Velocity    |             |
+| NoteOff        | 0x80         | Pitch       | Velocity    |             |
+| Control Change | 0xB0         | CC number   | MSB         | LSB *       | 
+
+ *<sub> Adat byte 3 (LSB) nem kötelező, de 7 helyett 14 bit pontosságu értéket adhatunk meg vele </sub>
+
 
 ## Szoftver a teszteléshez
 FL Studio 20
