@@ -44,20 +44,20 @@ A MIDI protokollban 8 bites adatcsomagokkal dolgozunk. Két féle üzenet van: s
 Egy üzenet mindig status byte-tal kezdődik, amit a parancs függvényében 0, 1 vagy 2 data byte követ.
 A status byte felső 4 bitje jelöli a kiadott parancsot (aminek az első bitje mindig 1, így az első kódszó decimálisan a 8), a második fele a csatornát jelöli (16 csatornát lehet kezelni, ebben a projektben egynél többre nincs szükségünk).
 Számunkra fontosabb status üzenetek:
-<li>
- <ul>
+<ul>
+ <li>
   NoteOn "hang lejátszás"
   Üzenet felépítése: 1 status byte (parancs: 0x90), 2 adat byte (pitch - melyik hang, velocity - "lenyomás ereje")
- </ul>
- <ul>
+ </li>
+ <li>
   NoteOff "hang leállítás"
   Üzenet felépítése: 1 status byte (parancs: 0x80), 2 adat byte (pitch, velocity)
- </ul>
- <ul>
+ </li>
+ <li>
   Control Change "paraméter állítás"
   Üzenet felépítése: 1 status byte (parancs: 0xB0), 1 vagy 2 adat byte (MSB, LSB) attól függően, hogy 7 vagy 14 bit precizitással szeretnénk küldeni az értéket
- </ul>
-</li>
+ </li>
+</ul>
 
 ## Szoftver a teszteléshez
 FL Studio 20
