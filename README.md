@@ -6,6 +6,9 @@ Ez a projekt a zenekészítés/zeneszerzés folyamatát segíti a MIDI protokoll
 Ennek a készüléknek a felépítése különböző feladatott ellátó alrészekből áll.
 
 ### 1.2 Vezérlő és modulok
+
+<img alt="promicropinout.png" data-hpc="true" src="https://github.com/Freshynex/ProMicro-MidiController/blob/main/promicropinout.png?raw=true" style="max-width: 100%;">
+
 A legfőbb része egy Atmel ATMEGA32u4 ic-vel ellátott Arduino Pro Micro fejlesztői alaplap (továbbiakban MCU).
 Az MCU-t egy kifejtő-kártyára helyezve a többi alrész (továbbiakban modul) ráköthető.
 A következő modulok lesznek alapból integrálva a készülékben:
@@ -22,7 +25,8 @@ visszaad egy értéket.
 
 ## 2. Kapcsolás rajz
 
-<img alt="promicropinout.png" data-hpc="true" src="https://github.com/Freshynex/ProMicro-MidiController/blob/main/promicropinout.png?raw=true" style="max-width: 100%;">
+<img alt="Schematic.png" data-hpc="true" src="https://github.com/Freshynex/ProMicro-MidiController/blob/main/Schematic.png?raw=true" style="max-width: 100%;">
+
 
 ## Components
 
@@ -32,7 +36,6 @@ Standard breadboard 56x165mm 200/630pin
 ### MCU
 AR-PROMICRO-TYPE-C (ATmega32U4)
 
-<img alt="Schematic.png" data-hpc="true" src="https://github.com/Freshynex/ProMicro-MidiController/blob/main/Schematic.png?raw=true" style="max-width: 100%;">
 
 ### Keyboard
 24 button keyboard by [bryckergithublink]
