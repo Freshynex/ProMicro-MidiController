@@ -48,7 +48,7 @@ Számunkra fontosabb status üzenetek:
  <li>
   NoteOn "hang lejátszás"
   Üzenet felépítése: 
-  <ul>
+  <ul style="list-style:none">
    <li>  
     1 status byte (parancs: 0x90)<br> 2 adat byte (pitch - melyik hang, velocity - "lenyomás ereje")
     </li>
