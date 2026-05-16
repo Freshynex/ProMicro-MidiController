@@ -45,6 +45,8 @@ PISO shift register: 74HC166 (3 db)
 
 ## 3. Funkcionalitás
 
+### 3.1 MIDI Protokoll
+
 A MIDI protokollban 8 bites adatcsomagokkal dolgozunk. Két féle üzenet van: status és data. Az első bit azt jelöli, hogy a kettő közül melyiket küldjük, így adat üzenet esetén 0-127, command üzenet esetén 128-255 a használható értéktartomány. Ezek együttesen alkotnak egy midi üzenetet (message).
 
 Egy üzenet mindig status byte-tal kezdődik, amit a parancs függvényében 0, 1 vagy 2 data byte követ.
@@ -60,6 +62,9 @@ Számunkra fontosabb status üzenetek:
 
  *<sub> Adat byte 3 (LSB) nem kötelező, de 7 helyett 14 bit pontosságu értéket adhatunk meg vele </sub>
 
+### 3.2 KB
+
+A billentyűzet 
 
 ## Szoftver a teszteléshez
 FL Studio 20
