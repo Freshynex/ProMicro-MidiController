@@ -23,27 +23,30 @@ visszaad egy értéket.
 
  - Billentyűzet modul (továbbiakban <b>KB</b>), amely egy 2 oktávos zongora interfészt ad a felhasználónak. 
 
-## 2. Kapcsolás rajz
+## 2. Alkatrészek
+
+MCU: Arduino Pro Micro Atmel ATMEGA32u4
+DISP: 128x64 i2c oled display (SSD1306 driver)
+Oktáv váltó gombok: TACTS-6x6x7.3 (2 db)
+KB gombok: AKKO Stellar Rose Switch – Lubed-5pin (24 db)
+Tengelyes potméter: POM1615 LIN 1K B (2 db)
+Toló potméter: PTA2043-2015CIB203 (2 db)
+PISO shift register: 74HC166 (3 db)
+
+### 2.1 Kapcsolás rajz
 
 <img alt="Schematic.png" data-hpc="true" src="https://github.com/Freshynex/ProMicro-MidiController/blob/main/Schematic.png?raw=true" style="max-width: 100%;">
 
+## 3. Funkcionalitás
 
-## Components
-
-### Base
-Standard breadboard 56x165mm 200/630pin
-
-### MCU
-AR-PROMICRO-TYPE-C (ATmega32U4)
-
-
-### Keyboard
-24 button keyboard by [bryckergithublink]
-
-### Extra controls
-2 Rotary pots
-2 Sliding pots
-2 buttons for octave switching
+A MIDI protokollban 8 bites adatcsomagokkal dolgozunk. Két féle üzenet van: command és data. Az első bit azt jelöli, hogy a kettő közül melyiket küldjük, így adat üzenet esetén 0-127, command üzenet esetén 128-255 a használható értéktartomány. Ezek együttesen alkotnak egy midi üzenetet (message).
+Egy üzenet mindig command byte-tal kezdődik, amit a parancs függvényében 0, 1 vagy 2 data byte követ.
+Mi esetünkben a fontosabb üzenetek:
+<li>
+ <ul>
+  NoteOn, NoteOff: 
+ </ul>
+</li>
 
 ## Software used for testing
 FL Studio 20
