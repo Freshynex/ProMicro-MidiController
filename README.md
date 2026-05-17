@@ -62,9 +62,9 @@ Számunkra fontosabb status üzenetek:
 
  *<sub> Adat byte 3 (LSB) nem kötelező, de 7 helyett 14 bit pontosságu értéket adhatunk meg vele </sub>
 
-### 3.2 KB
+### 3.2 Billentyűzet
 
-A billentyűzet 
+A billentyűzet kialakítása egy zongora mintájára készült. 2 oktáv, ami 24 gomb. A gombok mechanikus billentyűkapcsolókkal vannak kivitelezve. A keret illetve gomb kupakok 3D nyomtatással készültek. Három kaszkádolt parallel in serial out shift register segítségével vannak az MCU-ra kötve, így csak 3 pin felhasználása szükséges.
 
 ## Szoftver a teszteléshez
 FL Studio 20
