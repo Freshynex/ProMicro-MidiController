@@ -87,7 +87,7 @@ Ez a következő képpen nyílvánul meg:
 
 A készülék rendelkezik egy kis 1.2"-es OLED kijelző, amely SSD1306-os meghajtású.
 Az i²c, egy olyan protokoll, amely MASTER-SLAVE kapcsolatot biztosít <u>kettő vagy több</u> eszköz között. A szállítandó adatot a protokoll címkézi és szállítja az adatvonalon.
-Amikor a SLAVE címe egyezik a csomagban elhelyezett célcímmel, akkor azt a SLAVE fogadja és feldogozza. Jelenleg a <b>DSP</b> beépített címmel rendelkezik, amelynek a módosítása nehézkes.
+Amikor a SLAVE címe egyezik a csomagban elhelyezett célcímmel, akkor azt a SLAVE fogadja és feldogozza. Jelenleg a <b>DISP</b> beépített címmel rendelkezik, amelynek a módosítása nehézkes.
 A mostani címe <b>0x78</b>.
 
 ## Szoftver a teszteléshez
