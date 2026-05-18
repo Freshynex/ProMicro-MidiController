@@ -7,7 +7,7 @@ Ennek a készüléknek a felépítése különböző feladatott ellátó alrész
 
 ### 1.2 Vezérlő és modulok
 
-<img alt="promicropinout.png" data-hpc="true" src="https://github.com/Freshynex/ProMicro-MidiController/blob/main/promicropinout.png?raw=true" style="max-width: 100%;">
+<img alt="promicropinout.png" data-hpc="true" src="https://github.com/Freshynex/ProMicro-MidiController/blob/main/promicropinout.png?raw=true" style="max-width: 50%;">
 
 A legfőbb része egy Atmel ATMEGA32u4 ic-vel ellátott Arduino Pro Micro fejlesztői alaplap (továbbiakban MCU).
 Az MCU-t egy kifejtő-kártyára helyezve a többi alrész (továbbiakban modul) ráköthető.
@@ -82,6 +82,13 @@ Ez a következő képpen nyílvánul meg:
 |       5V       | 0V           | 0           |
 |                | 2.5V         | 512         |
 |                | 5V           | 1023        |
+
+### 3.5 i²c Kijelző és protokol
+
+A készülék rendelkezik egy kis 1.2"-es OLED kijelző, amely SSD1306-os meghajtású.
+Az i²c, egy olyan protokoll, amely MASTER-SLAVE kapcsolatot biztosít <u>kettő vagy több</u> eszköz között. A szállítandó adatot a protokoll címkézi és szállítja az adatvonalon.
+Amikor a SLAVE címe egyezik a csomagban elhelyezett célcímmel, akkor azt a SLAVE fogadja és feldogozza. Jelenleg a <b>DSP</b> beépített címmel rendelkezik, amelynek a módosítása nehézkes.
+A mostani címe <b>0x78</b>.
 
 ## Szoftver a teszteléshez
 FL Studio 20
