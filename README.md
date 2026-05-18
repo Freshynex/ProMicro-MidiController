@@ -23,7 +23,9 @@ visszaad egy értéket.
 
  - Billentyűzet modul (továbbiakban <b>KB</b>), amely egy 2 oktávos zongora interfészt ad a felhasználónak. 
 
-## 2. Alkatrészek
+## 2. Alkatrészek és kapcsolás
+
+### 2.1 Főalkatrészek
 
 MCU: Arduino Pro Micro Atmel ATMEGA32u4
 
@@ -64,7 +66,22 @@ Számunkra fontosabb status üzenetek:
 
 ### 3.2 Billentyűzet
 
-A billentyűzet kialakítása egy zongora mintájára készült. 2 oktáv, ami 24 gomb. A gombok mechanikus billentyűkapcsolókkal vannak kivitelezve. A keret illetve gomb kupakok 3D nyomtatással készültek. Három kaszkádolt parallel in serial out shift register segítségével vannak az MCU-ra kötve, így csak 3 pin felhasználása szükséges.
+A billentyűzet kialakítása egy zongora mintájára készült. 2 oktáv, ami 24 gomb. A gombok mechanikus billentyűkapcsolókkal vannak kivitelezve. A keret illetve gomb kupakok 3D nyomtatással készültek. Három kaszkádolt parallel in serial out shift register segítségével vannak az MCU-ra kötve, így csak 3 pin felhasználása szükséges. Ez a fajta megoldás lehetővé teszi a felhasználónak hogy 3Byte-on visszakapja a gombok állapotát egyszerre.
+
+### 3.3 Oktáv váltás
+
+A zenekészítéshez elengedhetetlenül szükséges hogy a billentyűzet képes legyen több oktávon is játszani. Ehhez az <b>MCU</b> két digitális bemenetét használjuk. A készülék oktáv-váltó gombok hatására a billentyűzeten reprezentált 2 oktávot eltolja, és így a felhasználónak sokkal több hang lesz hozzáférhető.
+
+### 3.4 Analog bevitel
+
+Kettő forgatható és kettő tolható lineáris potméter segítségével, kihasználva Kirchoff törvényeit, képes a készülék adott csatornák állapotait módosítani. A választott <b>MCU</b> analog bemenetei a referencia feszültséghez képest adja vissza a bemeneti értéket. Ezt a készülék 0-1023-as intervallumban elhelyezi (map-olja).
+
+Ez a következő képpen nyílvánul meg:
+| Ref. V         | ANAL bemenet | Érték       |
+| -------------  | ------------ | ----------- |
+|       5V       | 0V           | 0           |
+|                | 2.5V         | 512         |
+|                | 5V           | 1023        |
 
 ## Szoftver a teszteléshez
 FL Studio 20
