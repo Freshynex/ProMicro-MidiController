@@ -80,15 +80,28 @@ Ez a következő képpen nyílvánul meg:
 | Ref. V         | ANAL bemenet | Érték       |
 | -------------  | ------------ | ----------- |
 |       5V       | 0V           | 0           |
-|                | 2.5V         | 512         |
-|                | 5V           | 1023        |
+|       -"-      | 2.5V         | 512         |
+|       -"-      | 5V           | 1023        |
 
 ### 3.5 i²c Kijelző és protokol
 
-A készülék rendelkezik egy kis 1.2"-es OLED kijelző, amely SSD1306-os meghajtású.
 Az i²c, egy olyan protokoll, amely MASTER-SLAVE kapcsolatot biztosít <u>kettő vagy több</u> eszköz között. A szállítandó adatot a protokoll címkézi és szállítja az adatvonalon.
-Amikor a SLAVE címe egyezik a csomagban elhelyezett célcímmel, akkor azt a SLAVE fogadja és feldogozza. Jelenleg a <b>DISP</b> beépített címmel rendelkezik, amelynek a módosítása nehézkes.
+Amikor a SLAVE címe egyezik a csomagban elhelyezett célcímmel, akkor azt a SLAVE fogadja és feldogozza. 
+
+A készülék rendelkezik egy kis 1.2"-es OLED kijelző, amely SSD1306-os meghajtású. Jelenleg a <b>DISP</b> beépített címmel rendelkezik, amelynek a módosítása nehézkes.
 A mostani címe <b>0x78</b>.
+
+### 3.6 Bővithetőség
+
+Az <b>MCU</b>-nak nem az összes pin-jét használtuk, ezért ezekre még kapcsolhatóak eszközök. Amennyiben a beépítendő eszköz i²c-vel kommunikál, így az ráközhető párhuzamosan ugyanarra az ágra, amelyiken rajta van a <b>DISP</b>. Ebben az esetben érdemes figyelni a rákötendő eszköz <u><b>címére</b></u>. Amennyiben a címeknél ütközés történik, úgy nem fog működik a ráhelyezett eszköz, illetve a <b>DISP</b>.
+
+Lehetséges bővítési lehetőségek a jelzett protokollon:
+| IC / MODUL név | Funkció                  |
+| -------------  | ------------------------ |
+|  ADS1115 / -M  | ANAL bővítő (A0 - A3)    |
+|PCF8574 / IN830S| DIGITAL bővítő (8db, be) |
+|PCF8574 / OC805S| DIGITAL bővítő (8db, ki) |
+
 
 ## Szoftver a teszteléshez
 FL Studio 20
