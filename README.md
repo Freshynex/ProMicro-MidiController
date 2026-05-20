@@ -92,6 +92,7 @@ A készülék rendelkezik egy kis 1.2"-es OLED kijelző, amely SSD1306-os meghaj
 A mostani címe <b>0x78</b>.
 
 ## 4. Bővithetőség
+### 4.1 i²c
 
 Az <b>MCU</b>-nak nem az összes pin-jét használtuk, ezért ezekre még kapcsolhatóak eszközök. Amennyiben a beépítendő eszköz i²c-vel kommunikál, így az ráközhető párhuzamosan ugyanarra az ágra, amelyiken rajta van a <b>DISP</b>. Ebben az esetben érdemes figyelni a rákötendő eszköz <u><b>címére</b></u>. Amennyiben a címeknél ütközés történik, úgy nem fog működik a ráhelyezett eszköz, illetve a <b>DISP</b>.
 
@@ -102,7 +103,30 @@ Lehetséges bővítési lehetőségek a jelzett protokollon:
 |PCF8574 / IN830S| DIGITAL bővítő (8db, be) |
 |PCF8574 / OC805S| DIGITAL bővítő (8db, ki) |
 
-## 5. Készülék Prezentáció
+### 4.2 Nem használt pin-ek
+
+
+### 4.3 MCU csere
+
+
+
+### 4.4 UART (Soros kommunikáció)
+
+Az <b>UART</b> (<b>U</b>niversal <b>A</b>synchronous <b>R</b>eceiver‑<b>T</b>ransmitter) egy olyan kommunikációs protokoll, amelynél két egyenrangú eszköz kétírányú, <b>duplex</b> kapcsolatot alakít ki. Mind a kettő eszközön egy előre definiált közös bit-sebességet (<b>baudrate</b>-et) kell használni. Az közlendő csomagot egy start és stop bit-ekkel határolt üzenetbe építi be az egyik eszköz, és <b>Tx</b> (Transmitt) ágra küldi. Ezt a csomagot a fogadó fél az <b>Rx</b> ágán kapja.
+
+Így ez a fajta kiegészítési mód tudja kínálni a legtöbb lehetőséget, mivel így a már használt <b>MCU</b>-hoz köthető egy másik <b>MCU</b>, amely rendelkezik a saját beállításaival és saját moduljaival.
+
+Bekötése a következő:
+|    A eszköz    |   B eszköt   |
+| -------------  | ------------ |
+|     <b>G</b>   |    <b>G</b>  |
+|        Tx      |       Rx     |
+|        Rx      |       Tx     |
+|        +*      |       +*     |
+
+*<sub>Amennyiben nem akarunk vinni tápellátást protokoll-on, így a + kihagyható</sub>
+
+## 5. Készülék Prezentáció és Demo
 
 
 ## Szoftver a teszteléshez
