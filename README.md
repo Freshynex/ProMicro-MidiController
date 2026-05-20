@@ -91,7 +91,7 @@ Amikor a SLAVE címe egyezik a csomagban elhelyezett célcímmel, akkor azt a SL
 A készülék rendelkezik egy kis 1.2"-es OLED kijelző, amely SSD1306-os meghajtású. Jelenleg a <b>DISP</b> beépített címmel rendelkezik, amelynek a módosítása nehézkes.
 A mostani címe <b>0x78</b>.
 
-### 3.6 Bővithetőség
+## 4. Bővithetőség
 
 Az <b>MCU</b>-nak nem az összes pin-jét használtuk, ezért ezekre még kapcsolhatóak eszközök. Amennyiben a beépítendő eszköz i²c-vel kommunikál, így az ráközhető párhuzamosan ugyanarra az ágra, amelyiken rajta van a <b>DISP</b>. Ebben az esetben érdemes figyelni a rákötendő eszköz <u><b>címére</b></u>. Amennyiben a címeknél ütközés történik, úgy nem fog működik a ráhelyezett eszköz, illetve a <b>DISP</b>.
 
@@ -101,6 +101,8 @@ Lehetséges bővítési lehetőségek a jelzett protokollon:
 |  ADS1115 / -M  | ANAL bővítő (A0 - A3)    |
 |PCF8574 / IN830S| DIGITAL bővítő (8db, be) |
 |PCF8574 / OC805S| DIGITAL bővítő (8db, ki) |
+
+## 5. Készülék Prezentáció
 
 
 ## Szoftver a teszteléshez
