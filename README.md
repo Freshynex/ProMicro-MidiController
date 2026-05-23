@@ -9,11 +9,16 @@ Ennek a készüléknek a felépítése különböző feladatott ellátó alrész
 
 ### 1.2 Vezérlő és modulok
 
-<img alt="promicropinout.png" data-hpc="true" src="https://github.com/Freshynex/ProMicro-MidiController/blob/main/promicropinout.png?raw=true" style="max-width: 50%;">
+<img alt="promicropinout.png" data-hpc="true" src="https://github.com/Freshynex/ProMicro-MidiController/blob/main/promicropinout.png?raw=true" style="height: 50%;width: 50%">
 
 A legfőbb része egy Atmel ATMEGA32u4 ic-vel ellátott Arduino Pro Micro fejlesztői alaplap (továbbiakban MCU).
 Az MCU-t egy kifejtő-kártyára helyezve a többi alrész (továbbiakban modul) ráköthető.
-A következő modulok lesznek alapból integrálva a készülékben:
+
+A kifejtőkártya:
+
+<img alt="carrier board" data-hpc="true" src="https://github.com/Freshynex/ProMicro-MidiController/blob/main/_pics/CR/jpg/carrier/cb_layoutcheck1.jpg" style="height: 25%;width: 25%">
+
+A következő modulok vannak integrálva a készülékben:
 
  - Kijelző modul (továbbiakban <b>DISP</b>), amely egy egyszerű interfészt biztosít, hogy az aktuális bemeneti
 értékeket visszaadja, illetve hogy kényelmesen lehessen konfigurálni azt.
@@ -68,16 +73,16 @@ Számunkra fontosabb status üzenetek:
  *<sub> Adat byte 3 (LSB) nem kötelező, de 7 helyett 14 bit pontosságu értéket adhatunk meg vele </sub>
 
 ### 3.2 Billentyűzet
-
-A billentyűzet kialakítása egy zongora mintájára készült. 2 oktáv, ami 24 gomb. A gombok mechanikus billentyűkapcsolókkal vannak kivitelezve. A keret illetve gomb kupakok 3D nyomtatással készültek. Három kaszkádolt parallel in serial out shift register segítségével vannak az MCU-ra kötve, így csak 3 pin felhasználása szükséges. Ez a fajta megoldás lehetővé teszi a felhasználónak hogy 3Byte-on visszakapja a gombok állapotát egyszerre.
+<img alt="Keyboard" data-hpc="true" src="https://github.com/Freshynex/ProMicro-MidiController/blob/main/_pics/CR/jpg/modules/keyboard/1_kb_module_layout6.jpg" style="width:328px;height:530px;">
+A billentyűzet kialakítása egy zongora mintájára készült. 2 oktáv, ami 24 gomb. A gombok mechanikus billentyűkapcsolókkal vannak kivitelezve. A keret illetve gomb kupakok 3D nyomtatással készültek. Három kaszkádolt parallel in serial out shift register segítségével vannak az MCU-ra kötve, így csak 3 pin felhasználása szükséges. Ez a fajta megoldás lehetővé teszi hogy 3Byte-on visszakapjuk a gombok állapotát egyszerre.
 
 ### 3.3 Oktáv váltás
-
-A zenekészítéshez elengedhetetlenül szükséges hogy a billentyűzet képes legyen több oktávon is játszani. Ehhez az <b>MCU</b> két digitális bemenetét használjuk. A készülék oktáv-váltó gombok hatására a billentyűzeten reprezentált 2 oktávot eltolja, és így a felhasználónak sokkal több hang lesz hozzáférhető.
+<img alt="Octave buttons" data-hpc="true" src="https://github.com/Freshynex/ProMicro-MidiController/blob/main/_pics/CR/jpg/modules/octave_step/0_octstep_module_layoutconnection1.jpg" style="width:328px;height:530px;" >
+A zenekészítéshez szükséges, hogy a billentyűzet képes legyen több oktávon is játszani. Ehhez az <b>MCU</b> két digitális bemenetét használjuk. A készülék oktáv-váltó gombok hatására a billentyűzeten reprezentált 2 oktávot eltolja, és így mind a 10 MIDI protokollban használt oktáv elérhető.
 
 ### 3.4 Analog bevitel
-
-Kettő forgatható és kettő tolható lineáris potméter segítségével, kihasználva Kirchoff törvényeit, képes a készülék adott csatornák állapotait módosítani. A választott <b>MCU</b> analog bemenetei a referencia feszültséghez képest adja vissza a bemeneti értéket. Ezt a készülék 0-1023-as intervallumban elhelyezi (map-olja).
+<img alt="Potmeters" data-hpc="true" src="https://github.com/Freshynex/ProMicro-MidiController/blob/main/_pics/CR/jpg/modules/analog/0_anal_module_rotconnection2.jpg" style="width:328px;height:530px;" >
+Kettő forgatható és kettő tolható lineáris potméter segítségével, kihasználva Kirchoff törvényeit, képes a készülék adott csatornák állapotait módosítani. A választott <b>MCU</b> analog bemenetei a referencia feszültséghez képest adja vissza a bemeneti értéket. Ezt a készülék 0-1023-as intervallumban elhelyezi (map-eli).
 
 Ez a következő képpen nyílvánul meg:
 | Ref. V         | ANAL bemenet | Érték       |
