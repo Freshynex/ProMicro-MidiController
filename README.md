@@ -1,3 +1,5 @@
+
+
 # Pro Micro Midi Controller
 
 ## 1. A projekt bemutatása
@@ -46,6 +48,7 @@ PISO shift register: 74HC166 (3 db)
 <img alt="Schematic.png" data-hpc="true" src="https://github.com/Freshynex/ProMicro-MidiController/blob/main/Schematic.png?raw=true" style="max-width: 100%;">
 
 ## 3. Funkcionalitás
+ Teszteléshez használt szoftver: FL Studio 20 (Macbook M1-en kicsit bugos, ezért a kép villódzik néha)
 
 ### 3.1 MIDI Protokoll
 
@@ -103,40 +106,16 @@ Lehetséges bővítési lehetőségek a jelzett protokollon:
 |PCF8574 / IN830S| DIGITAL bővítő (8db, be) |
 |PCF8574 / OC805S| DIGITAL bővítő (8db, ki) |
 
-### 4.2 Nem használt pin-ek
-
-
-### 4.3 MCU csere
-
-
-
-### 4.4 UART (Soros kommunikáció)
-
-Az <b>UART</b> (<b>U</b>niversal <b>A</b>synchronous <b>R</b>eceiver‑<b>T</b>ransmitter) egy olyan kommunikációs protokoll, amelynél két egyenrangú eszköz kétírányú, <b>duplex</b> kapcsolatot alakít ki. Mind a kettő eszközön egy előre definiált közös bit-sebességet (<b>baudrate</b>-et) kell használni. Az közlendő csomagot egy start és stop bit-ekkel határolt üzenetbe építi be az egyik eszköz, és <b>Tx</b> (Transmitt) ágra küldi. Ezt a csomagot a fogadó fél az <b>Rx</b> ágán kapja.
-
-Így ez a fajta kiegészítési mód tudja kínálni a legtöbb lehetőséget, mivel így a már használt <b>MCU</b>-hoz köthető egy másik <b>MCU</b>, amely rendelkezik a saját beállításaival és saját moduljaival.
-
-Bekötése a következő:
-|    A eszköz    |   B eszköt   |
-| -------------  | ------------ |
-|     <b>G</b>   |    <b>G</b>  |
-|        Tx      |       Rx     |
-|        Rx      |       Tx     |
-|        +*      |       +*     |
-
-*<sub>Amennyiben nem akarunk vinni tápellátást protokoll-on, így a + kihagyható</sub>
-
 ## 5. Készülék Prezentáció és Demo
 
 ### Billentyűzet
-<video src="_vids/Keyboard demo.mp4" width="320" height="240" controls></video>
+https://github.com/user-attachments/assets/6a722bac-2a85-4638-812b-2556ad7aba79
 
 ### Potméter
-<video src="_vids/Pot_demo.mp4" width="320" height="240" controls></video>
-
+[<video src="_vids/Pot_demo.mp4" width="320" height="240" controls></video>
+](https://github.com/user-attachments/assets/77403d33-6a48-4602-aa05-ce928a655359
+)
 ### Billentyűzet, potméter (pitch paraméter állítása), oktáv váltás
-<video src="_vids/Keyboard pitch wheel octave demo.mp4" width="320" height="240" controls></video>
+https://github.com/user-attachments/assets/33ad1122-0a03-4d51-aa62-576f443cc43e
 
 
-## Szoftver a teszteléshez
-FL Studio 20
