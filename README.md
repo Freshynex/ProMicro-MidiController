@@ -128,6 +128,15 @@ Bekötése a következő:
 
 ## 5. Készülék Prezentáció és Demo
 
+### Billentyűzet
+<video src="_vids/Keyboard demo.mp4" width="320" height="240" controls></video>
+
+### Potméter
+<video src="_vids/Pot_demo.mp4" width="320" height="240" controls></video>
+
+### Billentyűzet, potméter (pitch paraméter állítása), oktáv váltás
+<video src="_vids/Keyboard pitch wheel octave demo.mp4" width="320" height="240" controls></video>
+
 
 ## Szoftver a teszteléshez
 FL Studio 20
