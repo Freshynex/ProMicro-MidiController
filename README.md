@@ -121,7 +121,7 @@ Ez igaz fordítottan is, ezért ez a fajta megoldás Full-Duplex-nek minősül.
 |    Tx    |    Rx    |
 |    Rx    |    Tx    |
 |    G     |    G     |
-|    Vcc   |    Vcc   |*
+|   *Vcc   |   *Vcc   |
 
 
 
