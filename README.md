@@ -117,6 +117,7 @@ Az UART egy olyan soron protokoll fajta, amely két egyenrangú eszközt köt ö
 Ehhez a fajta kapcsolathoz nem szükséges külön órajel, mivel a kommunikációt egy közösen előre deklarált jelaránnyal (baudrate) éri el. A Küldő fél a bitfolyamot a saját Tx (Transmit) ágán küldi a másik eszköz Rx (Receive lábára.
 Ez igaz fordítottan is, ezért ez a fajta megoldás Full-Duplex-nek minősül.
 | A eszköz | B eszköz |
+|----------|----------|
 |    Tx    |    Rx    |
 |    Rx    |    Tx    |
 |    G     |    G     |
