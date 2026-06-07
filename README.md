@@ -141,6 +141,7 @@ https://github.com/user-attachments/assets/33ad1122-0a03-4d51-aa62-576f443cc43e
 
 ### 3D render
 
-<img alt="mkoa_front" data-hpc="true" src="https://raw.githubusercontent.com/Freshynex/ProMicro-MidiController/74e897116d9e2e20458bcf48672c1c41b9999f5a/schematic%20%26%20pcb/kicad_project/custom_exports/mcu-kb-octstp-anal-combinedpcb/mkoa_combinedpcb_front.png" style="width:100%" >
+<img alt="mkoa_front" data-hpc="true" src="https://raw.githubusercontent.com/Freshynex/ProMicro-MidiController/74e897116d9e2e20458bcf48672c1c41b9999f5a/schematic%20%26%20pcb/kicad_project/custom_exports/mcu-kb-octstp-anal-combinedpcb/mkoa_combinedpcb_front.png" style="width:49%" >
+<img alt="mkoa_front" data-hpc="true" src="https://raw.githubusercontent.com/Freshynex/ProMicro-MidiController/74e897116d9e2e20458bcf48672c1c41b9999f5a/schematic%20%26%20pcb/kicad_project/custom_exports/mcu-kb-octstp-anal-combinedpcb/mkoa_combinedpcb_frontwotht.png" style="width:49%" >
 <img alt="mkoa_front" data-hpc="true" src="https://raw.githubusercontent.com/Freshynex/ProMicro-MidiController/74e897116d9e2e20458bcf48672c1c41b9999f5a/schematic%20%26%20pcb/kicad_project/custom_exports/mcu-kb-octstp-anal-combinedpcb/mkoa_combinedpcb_side1.png" style="width:100%" >
 <img alt="mkoa_front" data-hpc="true" src="https://raw.githubusercontent.com/Freshynex/ProMicro-MidiController/74e897116d9e2e20458bcf48672c1c41b9999f5a/schematic%20%26%20pcb/kicad_project/custom_exports/mcu-kb-octstp-anal-combinedpcb/mkoa_combinedpcb_side2.png" style="width:100%" >
